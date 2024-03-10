@@ -1,5 +1,25 @@
 # Nmap Cheat Sheet
 
+## Initial port scan
+```bash
+nmap -T4 -vvv -oN scan_results.txt <target_ip>
+```
+- -T4: Sets the timing template to 4, which increases the scan speed while still maintaining accuracy. This means the scan will be conducted more aggressively than the default timing template.
+- -vvv: Enables verbose output with maximum verbosity level, providing detailed information about the scan progress in real time. This will display extensive information about the scan process, including open ports, service versions, and potential errors.
+- -oN scan_results.txt: Specifies the output format as normal and saves the results to a file named scan_results.txt. The scan results, including the verbose output, will be written to this file.
+- <target_ip>: The IP address you want to scan. The scan will be performed on this target IP address.
+
+## Service, version, OS detection and scripts scan
+```bash
+nmap -p (port, port, port) -A --script=default -vvv <target_ip> -oN scan_results.txt
+```
+- -p (list,ports,to,be,scanned): This option specifies the ports to be scanned, similar to the previous explanation. You can specify a comma-separated list of individual ports, port ranges, or port lists.
+- -A: This option enables aggressive scan mode, which includes OS detection, version detection, script scanning, and traceroute.
+- --script=default: This option specifies the NSE (Nmap Scripting Engine) script to be executed during the scan, as explained before. In this case, the default script category is used.
+- -vvv: This option enables maximum verbosity level, providing very detailed and extensive output about the scan progress. It displays a high level of verbosity, useful for debugging or analyzing the scan results in detail.
+- <target_ip>: This is the IP address of the target host or network to be scanned, as explained before.
+- -oN scan_results.txt: This option specifies the output format as normal and saves the results to a file named scan_results.txt, similar to the previous explanation.
+
 ## Beginner Concepts
 
 ### Basic Scanning
