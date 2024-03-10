@@ -1,0 +1,55 @@
+# Gobuster Cheat Sheet
+
+## Initial GoBuster Directory Scan
+```bash
+gobuster dir -u <target_url> -w <wordlist> -t 50
+```
+- dir: This option specifies that we want to perform directory enumeration.
+- -u <target_url>: This option specifies the target URL or IP address where the directory enumeration will be performed. Replace <target_url> with the actual URL or IP address of the target.
+- -w <wordlist>: This option specifies the wordlist file to be used for brute-forcing directories. Gobuster will use the words from this file to construct and test directory paths.
+- -t 50: This option specifies the concurrency level, i.e., the number of concurrent threads to use during the scan. In this case, it's set to 50, meaning Gobuster will use 50 concurrent threads to perform directory enumeration. This can help speed up the scan by sending multiple requests simultaneously.
+
+## Beginner Concepts
+
+### Basic Usage
+```bash
+# Basic Usage
+gobuster dir -u <target_url> -w <wordlist>
+
+# Directory/File Enumeration
+gobuster dir -u <target_url> -w <wordlist>
+
+# Recursive Scanning
+gobuster dir -u <target_url> -w <wordlist> -r
+
+# Extension Enumeration
+gobuster dir -u <target_url> -w <wordlist> -x <extensions>
+
+# Wildcard Responses
+gobuster dir -u <target_url> -w <wordlist> -z
+
+```
+### Intermediate Concepts
+```bash
+# Custom Headers
+gobuster dir -u <target_url> -w <wordlist> -H "Header: Value"
+
+# Authorization
+gobuster dir -u <target_url> -w <wordlist> -x <extensions> -U <username> -P <password>
+
+# Output Formatting
+gobuster dir -u <target_url> -w <wordlist> -o <output_file>
+
+# Status Codes
+gobuster dir -u <target_url> -w <wordlist> -s <status_codes>
+
+# URL Encoding
+gobuster dir -u <target_url> -w <wordlist> -e
+
+# User-Agent Spoofing
+gobuster dir -u <target_url> -w <wordlist> -a "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+# Timeout
+gobuster dir -u <target_url> -w <wordlist> -t <timeout>
+
+```
