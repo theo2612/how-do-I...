@@ -2,7 +2,7 @@
 
 ## Initial port scan
 ```bash
-nmap -T4 -vvv -oN scan_results.txt <target_ip>
+nmap -T4 -vvv -oN open_port_scan_results.txt <target_ip>
 ```
 - -T4: Sets the timing template to 4, which increases the scan speed while still maintaining accuracy. This means the scan will be conducted more aggressively than the default timing template.
 - -vvv: Enables verbose output with maximum verbosity level, providing detailed information about the scan progress in real time. This will display extensive information about the scan process, including open ports, service versions, and potential errors.
@@ -11,7 +11,7 @@ nmap -T4 -vvv -oN scan_results.txt <target_ip>
 
 ## Service, version, OS detection and scripts scan
 ```bash
-nmap -p (port, port, port) -A --script=default -vvv <target_ip> -oN scan_results.txt
+nmap -p (port, port, port) -A --script=default -vvv <target_ip> -oN service_version_OS_scan_results.txt
 ```
 - -p (list,ports,to,be,scanned): This option specifies the ports to be scanned, similar to the previous explanation. You can specify a comma-separated list of individual ports, port ranges, or port lists.
 - -A: This option enables aggressive scan mode, which includes OS detection, version detection, script scanning, and traceroute.
